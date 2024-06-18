@@ -1,0 +1,11 @@
+<div [ngClass]="{ 'alert alert-success': !todo.active }" class="card my-3">
+    <div class="card-body">
+        <h5 [ngClass]="{'strike': !todo.active}" class="card-title">{{ todo.title }}</h5>
+        <p [ngClass]="{'strike': !todo.active}" class="card-text">{{ todo.desc }}</p>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="todo{{i}}" (click)="onCheckboxClick(todo)" [checked]="!todo.active">
+            <label class="form-check-label" for="todo{{i}}">Done</label>
+        </div>
+        <button class="btn btn-sm btn-danger" (click)="deleteTodo(todo)">Delete</button>
+    </div>
+</div>
